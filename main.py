@@ -18,5 +18,9 @@ def explain_table(table_name: str) -> str:
     return f"{table_name} is a warehouse table used in BI ETL."
 
 if __name__ == "__main__":
-    print('program started')
-    mcp.run()
+    mcp.run(
+        transport="streamable-http",
+        host="127.0.0.1",
+        port=8001,
+        path="/mcp",
+    )
